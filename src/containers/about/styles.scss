@@ -1,0 +1,84 @@
+.about {
+  &__content {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+
+    &__personalWrapper{
+      width: 50%;
+    }
+
+    &__personalWrapper {
+      h3 {
+        margin-bottom: 10px;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--yellow-theme-main-color);
+        border-bottom: 1px solid var(--yellow-theme-main-color);
+
+      }
+
+      h3.personalInformationHeaderText {
+        padding-top: 20px;
+
+      }
+
+      p {
+        color: var(--yellow-theme-sub-text-color);
+        font-size: 1.8rem;
+        line-height: 1.65;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--yellow-theme-main-color);
+      }
+
+      ul > li {
+        line-height: 1rem;
+        margin-bottom: 15px;
+        
+
+        span.title,
+        span.value {
+          padding-left:20px;
+          font-size: 18px;
+          font-weight: 700;
+          letter-spacing: 0.5px;
+          border-bottom: 2px solid var(--yellow-theme-main-color);
+          position: relative;
+          display: inline-block;
+          margin-right: 16px;
+          padding-bottom: 5px;
+          color: var(--yellow-theme-sub-text-color);
+        }
+
+        span.value {
+          border: none;
+        }
+      }
+    }
+
+
+  }
+}
+.about {
+  &__content {
+    display: flex;
+    align-items: center; // 세로 정렬
+  }
+
+  &__content__personalWrapper {
+    flex: 1;
+    padding: 20px;
+  }
+
+  &__content__imageWrapper {
+    flex: 1;
+    text-align: center;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 150%; // 원형 이미지
+  }
+}
