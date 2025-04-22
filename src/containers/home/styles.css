@@ -8,25 +8,25 @@
 }
 .home__text-wrapper {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 .home__text-wrapper .mb-1x {
   color: var(--yellow-theme-main-color);
   font-weight: 500;
   font-size: 8rem;
   line-height: 10rem;
-  position: relative;
+  margin: 0;
 }
-.home__text-wrapper .fluidz-48 {
+.home__text-wrapper .animated-text {
+  font-size: 6rem;
   color: var(--yellow-theme-sub-text-color);
-  margin: 0px;
-  font-weight: 500;
-  font-size: 8rem;
-  line-height: 10rem;
-  position: relative;
-  overflow: hidden;
+  margin-top: 1.5rem;
+  min-height: 3rem;
   white-space: nowrap;
-  animation: typingEffectAnimation 2.5s steps(20, end);
+  overflow: hidden;
+  border: none;
+  padding: 0;
 }
 .home__contact-me {
   display: flex;
@@ -49,28 +49,29 @@
 }
 
 @media only screen and (max-width: 550px) {
-  .home__text-wrapper h1 {
-    font-size: 3rem;
-    line-height: 5rem;
-  }
-}
-@media only screen and (min-width: 551px) and (max-width: 768px) {
-  .home__text-wrapper h1 {
+  .home__text-wrapper h2.mb-1x {
     font-size: 4rem;
     line-height: 6rem;
   }
+  .home__text-wrapper .animated-text {
+    font-size: 1.5rem;
+  }
 }
-@media only screen and (min-width: 769px) and (max-width: 990px) {
-  .home__text-wrapper h1 {
+@media only screen and (min-width: 551px) and (max-width: 768px) {
+  .home__text-wrapper h2.mb-1x {
     font-size: 6rem;
     line-height: 8rem;
   }
-}
-@keyframes typingEffectAnimation {
-  from {
-    width: 0;
+  .home__text-wrapper .animated-text {
+    font-size: 2rem;
   }
-  to {
-    width: 100%;
+}
+@media only screen and (min-width: 769px) and (max-width: 990px) {
+  .home__text-wrapper h2.mb-1x {
+    font-size: 7rem;
+    line-height: 9rem;
+  }
+  .home__text-wrapper .animated-text {
+    font-size: 2.3rem;
   }
 }/*# sourceMappingURL=styles.css.map */

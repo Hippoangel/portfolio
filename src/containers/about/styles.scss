@@ -1,84 +1,86 @@
 .about {
   &__content {
     display: flex;
+    flex-wrap: wrap; // ✅ 반응형을 위해 wrap
     gap: 20px;
     padding: 20px;
     width: 100%;
-
-    &__personalWrapper{
-      width: 50%;
-    }
-
-    &__personalWrapper {
-      h3 {
-        margin-bottom: 10px;
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: var(--yellow-theme-main-color);
-        border-bottom: 1px solid var(--yellow-theme-main-color);
-
-      }
-
-      h3.personalInformationHeaderText {
-        padding-top: 20px;
-
-      }
-
-      p {
-        color: var(--yellow-theme-sub-text-color);
-        font-size: 1.8rem;
-        line-height: 1.65;
-        padding-bottom: 20px;
-        border-bottom: 1px solid var(--yellow-theme-main-color);
-      }
-
-      ul > li {
-        line-height: 1rem;
-        margin-bottom: 15px;
-        
-
-        span.title,
-        span.value {
-          padding-left:20px;
-          font-size: 18px;
-          font-weight: 700;
-          letter-spacing: 0.5px;
-          border-bottom: 2px solid var(--yellow-theme-main-color);
-          position: relative;
-          display: inline-block;
-          margin-right: 16px;
-          padding-bottom: 5px;
-          color: var(--yellow-theme-sub-text-color);
-        }
-
-        span.value {
-          border: none;
-        }
-      }
-    }
-
-
-  }
-}
-.about {
-  &__content {
-    display: flex;
-    align-items: center; // 세로 정렬
+    align-items: flex-start; // 정렬 안정화
   }
 
   &__content__personalWrapper {
-    flex: 1;
-    padding: 20px;
+    flex: 1 1 100%; // ✅ 기본은 전체 너비
+    order: 2; // ✅ 모바일에서 아래로
+
+    h3 {
+      margin-bottom: 10px;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--yellow-theme-main-color);
+      border-bottom: 1px solid var(--yellow-theme-main-color);
+    }
+
+    h3.personalInformationHeaderText {
+      padding-top: 20px;
+    }
+
+    p {
+      color: var(--yellow-theme-sub-text-color);
+      font-size: 1.8rem;
+      line-height: 1.65;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--yellow-theme-main-color);
+    }
+
+    ul > li {
+      line-height: 1rem;
+      margin-bottom: 15px;
+
+      span.title,
+      span.value {
+        padding-left: 20px;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        border-bottom: 2px solid var(--yellow-theme-main-color);
+        position: relative;
+        display: inline-block;
+        margin-right: 16px;
+        padding-bottom: 5px;
+        color: var(--yellow-theme-sub-text-color);
+      }
+
+      span.value {
+        border: none;
+      }
+    }
   }
 
   &__content__imageWrapper {
-    flex: 1;
+    flex: 1 1 100%; // ✅ 기본은 전체 너비
     text-align: center;
+    order: 1; // ✅ 모바일에서 위로
+
+    img {
+      max-width: 60%; // ✅ 적당한 크기 조절
+      height: auto;
+      border-radius: 50%;
+    }
   }
 
-  img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 150%; // 원형 이미지
+  @media (min-width: 768px) {
+    &__content__personalWrapper {
+      flex: 1;
+      order: 1;
+    }
+
+    &__content__imageWrapper {
+      flex: 1;
+      order: 2;
+
+      img {
+        max-width: 80%;
+      }
+    }
   }
 }
